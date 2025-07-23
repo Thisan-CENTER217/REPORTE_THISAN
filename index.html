@@ -11,13 +11,15 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            display: flex; /* Usar flexbox para centrar */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            height: 100vh; /* Altura completa de la ventana */
         }
 
         .container {
             width: 90%; /* Aumentar el ancho para pantallas pequeñas */
             max-width: 600px;
-            margin: auto;
-            overflow: hidden;
             background: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -70,15 +72,8 @@
         }
 
         @media (max-width: 600px) {
-            .date-time {
+            .repair-form {
                 flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-            }
-
-            .date-time input,
-            .date-time select {
-                width: 100%; /* Asegura que ocupen todo el ancho en pantallas pequeñas */
-                margin-right: 0; /* Eliminar margen derecho */
-                margin-bottom: 10px; /* Espacio entre los cuadros en pantallas pequeñas */
             }
         }
     </style>
@@ -89,9 +84,13 @@
             <h1>Lan Center Thisan</h1> <!-- Título actualizado -->
         </header>
         <form class="repair-form" action="https://formspree.io/f/mzzvdnze" method="POST">
+            <label for="numero_pc">Número de PC:</label>
+            <input type="text" id="numero_pc" name="numero_pc" placeholder="Escribe el número de PC" required>
+
             <label for="horario">Horario:</label>
             <select id="horario" name="horario" required>
                 <option value="dia">Día</option>
+                <option value="tarde">Tarde</option> <!-- Nueva opción añadida -->
                 <option value="noche">Noche</option>
             </select>
 
@@ -104,6 +103,7 @@
                 <option value="audifonos_mal_sonido">Audífonos con mal sonido</option>
                 <option value="teclado_no_reacciona">Teclado no reacciona</option>
                 <option value="mouse_no_reacciona">Mouse no reacciona</option>
+                <option value="se_congelo">Se congeló</option> <!-- Nueva opción añadida -->
             </select>
 
             <label for="usuario">Usuario o Nombre:</label>
